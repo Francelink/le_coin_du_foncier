@@ -1,0 +1,66 @@
+{# Offre non publé #}
+{% if statut == "draft" %}
+    <h3>Détail des parcelles</h3>
+    <div class="list-offre" id="con">
+    <table>
+        <thead>
+            <tr>
+                {% for td in table.tdhead %}
+                    <th class="{{ td }}"> {{ td }} </th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for tr in table.tdbody %}
+                <tr>
+                    {% for td in tr %}
+                        {% if td is iterable  %}
+                            <td class="{{ td.key }}" data-value="{{ td.key }}">{% if td.value is iterable  %}{{ td.value|join(', ') }}{% else %}{{ td.value }}{% endif %}</td>
+                        {% else %}
+                            <input type="hidden" name="coordonnees" value="{{ td }}">  
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}   
+        </tbody>
+    </table>
+    </div>
+        <div class="button-scroll">
+            <button type="" id="btn-left"> </button>
+            <button type="" id="btn-right"> </button>
+        </div>
+{% else %}
+    <h3>Détail des parcelles</h3>
+    <div class="list-offre" id="con">
+    <table>
+        <thead>
+            <tr>
+                {% for td in table.tdhead %}
+                    <th class="{{ td }}"> {{ td }} </th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for tr in table.tdbody %}
+                <tr>
+                    {% for td in tr %}
+                        {% if td is iterable  %}
+                            <td class="{{ td.key }}" data-value="{{ td.key }}">{% if td.value is iterable  %}{{ td.value|join(', ') }}{% else %}{{ td.value }}{% endif %}</td>
+                        {% else %}
+                            <input type="hidden" name="coordonnees" value="{{ td }}">  
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}   
+        </tbody>
+    </table>
+    </div>
+        <div class="button-scroll">
+            <button type="" id="btn-left"> </button>
+            <button type="" id="btn-right"> </button>
+        </div>
+        <div class="div-popup-2"> 
+           <a class="link-popup" href="#link-popup">Contacter vigneron(ne) - propriétaire</a>
+        </div>
+{% endif %}
+

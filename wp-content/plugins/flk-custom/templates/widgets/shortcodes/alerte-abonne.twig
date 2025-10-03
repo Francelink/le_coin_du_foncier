@@ -1,0 +1,31 @@
+<form action="/" id="alert_form" method="POST">
+    <div class="commune">
+    <label for="commune">Commune<span style="color: #ff0000 ">*</span> </label>
+        <select id="{{communes.data_key|trim}}" name="{{communes.name|trim}}" {% if communes.required %} required {% endif %} class="{{communes.classes}}">
+            {% if communes.options_value %}
+                    <option value="_">{{communes.label}}</option>
+                    {% for k, option in communes.options_value %}
+                        <option value="{{k}}">
+                            {{option}}
+                        </option>
+                {% endfor %}
+            {% endif %}
+        </select>
+    </div>
+        <div class="email">
+        <label for="form-field-email" class="elementor-field-label">
+            Email<span style="color: #ff0000 ">*</span>
+        </label>
+        <input type="email" name="email" id="form-email" class="elementor-field elementor-size-xs elementor-field-textual" required="required" aria-required="true">
+    </div>
+
+    <div class="valide">
+        <button type="submit" class="">
+            <span>
+                <span class="elementor-button-icon"></span>
+                <span class="elementor-button-text">VALIDER mon alerte</span>
+            </span>
+        </button>
+    </div>
+</form>
+<span class="response"></span>

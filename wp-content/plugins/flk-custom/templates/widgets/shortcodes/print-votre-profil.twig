@@ -1,0 +1,29 @@
+{# Offre non publé #}
+{% if statut == "draft" or is_admin == "1"  %} 
+	<h3>votre profil</h3>
+	{% for key, input in inputs %}
+		<label class="{{input.label|replace({' ':'_'})|replace({'é':'e'})|replace({'\'':'_'}) }}" for="{{input.name}}">
+			{{input.label}} :
+			<span class="detail">
+				{{input.value}}
+				{# {% if input.label is instanceof('\DateTime') %}
+					{{input.value|date('dd/mm/YYYY')}}
+				{% else %}
+					{{input.value}}
+				{% endif %} #}
+			</span>
+		</label>
+	{% endfor %}
+{% else %}
+		<h3>profil du vendeur</h3>
+		{% for key, input in inputs %}
+			<label class="{{input.label|replace({' ':'_'})|replace({'é':'e'})|replace({'\'':'_'}) }}">
+				{{input.label}}
+				:
+				<span> </span>
+			</label>
+		{% endfor %}
+		<div class="div-popup">
+			<a class="link-popup" href="#link-popup">Contacter vigneron(ne) - propriétaire</a>
+		</div>
+{% endif %}

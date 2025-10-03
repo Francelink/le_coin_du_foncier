@@ -1,0 +1,48 @@
+<h2 class="titre-section h2_votre_offre">
+	VOTRE OFFRE
+</h2>
+
+{% for key, input in inputs %}
+	<fieldset class="{% if input.required %}fieldset_required{% endif %} fieldset_{{input.type}} fieldset_{{input.name}} fieldset_{{input.type}}">
+		<label for="{{input.name}}">{{input.label}}{% if input.required %}<span style="color: #ff0000 ">*</span> {% endif %}</label>
+		{% if input.option %}
+				{% if input.type == "select" %}
+					<select id="{{input.data_key}}" name="{{input.name}}" {% if input.required %} required {% endif %}>
+						{% if input.options_value %}
+							<option value="_">{{input.label}}</option>
+							{% for k, option in input.options_value %}
+								{% if k == input.default_value %}
+									<option value="{{k}}" selected="selected">{{option}}</option>
+								{% else %}
+									<option value="{{k}}">{{option}}</option>
+								{% endif %}
+							{% endfor %}
+						{% endif %}
+					</select>
+				{% elseif input.type == "radio" %}
+					<input type="hidden" name="flk_radio" value="{{input.name}}">
+					{% if input.options_value %}
+						{% for j, radio in input.options_value %}
+							<div class="radio_group radio_group_">
+								{% if j == input.default_value %} 
+									<input type="radio" id="{{j}}" name="{{input.name}}" value="{{j}}" checked>
+								{% else %}
+									<input type="radio" id="{{j}}" name="{{input.name}}" value="{{j}}">
+								{% endif %}
+								<label for="{{j}}">{{radio}}</label>
+							</div>
+						{% endfor %}
+					{% endif %}
+				{% endif %}
+		{% else %}
+			{% if input.type == "date_picker" %}
+				<input type="date" id="{{input.data_key}}" name="{{input.name}}" {% if input.required %} required {% endif %} placeholder="{{input.placeholder}}" {% if input.default_value != false %} value="{{input.default_value}}" {% endif %}>
+			{% else %} 			
+				<input type="{{input.type}}" id="{{input.data_key}}" class="{{input.name}}" name="{{input.name}}" {% if input.required %} required {% endif %} placeholder="{{input.placeholder}}" {% if input.default_value != false %} value="{{input.default_value}}" {% endif %}>
+			{% endif %}
+			{% if input.instructions|length > 0 %}
+				<span class="instructions" for="{{input.name}}"> {{input.instructions}} </span>			
+			{% endif %}
+		{% endif %}
+	</fieldset>
+{% endfor %}

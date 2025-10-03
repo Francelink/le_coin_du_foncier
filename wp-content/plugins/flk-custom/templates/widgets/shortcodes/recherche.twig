@@ -1,0 +1,68 @@
+<div class="title">
+        <h3 id="show"> Filtres  </h3>
+        <h3 id="retour"> Retour  </h3>
+	</div>
+<div class="body_shortcode_recherche">
+    {% for key, sous_group in inputs %}
+        <div class="{{key}} sous_group sous_group_{{key}}" data-key="{{key}}" {% if key != "recherche" %}style="display:none;"{% endif %}>
+            {% if input.name == "recherche" %}
+            <h3>{{sous_group.titre}}</h3> {# On affiche le titre du sous groupe #}
+            {% endif %}
+            {% for input in sous_group.champs %} {# On parcours les champs du sous groupe #}
+                <fieldset class="{% if input.required %}fieldset_required{% endif %} fieldset_{{input.type}} fieldset_{{input.name}} fieldset_{{input.type}}">
+                    <label for="{{input.name}}">{{input.label}}</label>
+                    {% if input.option %}
+                            {% if input.type == "select" %}
+                                <select id="{{input.data_key|trim}}" name="{{input.name|trim}}" {% if input.required %} required {% endif %} class="{{input.classes}}">
+                                    {% if input.options_value %}
+                                        <option value="_">{{input.label}}</option>
+                                        {% for k, option in input.options_value %}
+                                            <option value="{{k}}">{{option}}</option>
+                                        {% endfor %}
+                                    {% endif %}
+                                </select>
+                            {% elseif input.type == "radio" %}
+                                <input type="hidden" name="flk_radio" value="{{input.name}}">
+                                {% if input.options_value %}
+                                    {% for j, radio in input.options_value %}
+                                        <div class="radio_group radio_group_">
+                                            <input type="radio" id="{{j|trim}}" name="{{input.name|trim}}" value="{{j}}">
+                                            <label for="{{j}}">{{radio}}</label>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endif %}
+                        {% else %}
+                            <input type="{{input.type}}" id="{{input.data_key|trim}}" name="{{input.name|trim}}" {% if input.required %} required {% endif %} placeholder="{{input.placeholder}}"  {% if input.name == "coordonees_gps" %} disabled {% endif %}>
+                            {% if input.instructions|length > 0 %}
+                                <span class="instructions" for="{{input.name}}"> {{input.instructions}} </span>			
+                            {% endif %}
+                        {% endif %}
+                </fieldset>
+            {% endfor %}
+        </div>
+    {% endfor %}
+        <div class="div_btn_recherche">
+            <div>
+		        <a class="button_recherche_shortcode" id="hide">
+                    <span class="rechercher">
+                        <span class="loader_custom" style="display:none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_0XTQ{transform-origin:center;animation:spinner_y6GP .75s linear infinite}@keyframes spinner_y6GP{100%{transform:rotate(360deg)}}</style><path class="spinner_0XTQ" d="M12,23a9.63,9.63,0,0,1-8-9.5,9.51,9.51,0,0,1,6.79-9.1A1.66,1.66,0,0,0,12,2.81h0a1.67,1.67,0,0,0-1.94-1.64A11,11,0,0,0,12,23Z"/></svg>
+                        </span>
+                        <span class="recherche_label_jecherche">Recherche</span>
+                    </span>
+                </a>
+		        <a class="button_recherche_shortcode" id="hide-mobil">
+                    <span class="rechercher">
+                        <span class="loader_custom" style="display:none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_0XTQ{transform-origin:center;animation:spinner_y6GP .75s linear infinite}@keyframes spinner_y6GP{100%{transform:rotate(360deg)}}</style><path class="spinner_0XTQ" d="M12,23a9.63,9.63,0,0,1-8-9.5,9.51,9.51,0,0,1,6.79-9.1A1.66,1.66,0,0,0,12,2.81h0a1.67,1.67,0,0,0-1.94-1.64A11,11,0,0,0,12,23Z"/></svg>
+                        </span>
+                        <span class="recherche_label_jecherche">Recherche</span>
+                    </span>
+                </a>
+		        <a class="button_reinitialisation_filtres" id="reinit_filtres" style="display: none;">
+                    <i class="fas fa-undo-alt"></i>Réinitialiser les filtres
+                </a>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,24 @@
+{# Offre non publé #}
+{% if statut == "draft" %}
+	<h3>votre offre</h3>
+	{% for key, input in inputs %}
+		<label  class="{{input.label|replace({' ':'_'})|replace({'é':'e'})|replace({'\’':'_'}) }}" for="{{input.name}}">
+			{{input.label}}
+			:
+			<span>
+				{{input.value}}
+			</span>
+		</label>
+	{% endfor %}
+{% else %}
+	<h3>offre</h3>
+	{% for key, input in inputs %}
+		<label class="{{input.label|replace({' ':'_'})|replace({'é':'e'})|replace({'\’':'_'}) }}" for="{{input.name}}">
+			{{input.label}}
+			:
+			<span>
+				{{input.value}}
+			</span>
+		</label>
+	{% endfor %}
+{% endif %}

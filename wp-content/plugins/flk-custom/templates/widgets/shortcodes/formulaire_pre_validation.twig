@@ -1,0 +1,10 @@
+<span>
+    Avant d'accéder à la validation de l'offre, sachez que vos coordonnées (Nom, prénom, téléphone et adresse e-mail) seront envoyées par mail aux personnes intéressées par votre offre pour qu'elles puissent vous recontacter et candidater à votre offre.
+</span>
+
+<form action="POST" class="pre_validation"> 
+    <input type="submit" value="Vers la validation de l'offre" data-admin="false">    
+    {% if administrator %}
+        <input type="submit" value="VALIDER l’OFFRE POUR ADMIN" data-admin="true">    
+    {% endif %}
+</form>

@@ -1,0 +1,1105 @@
+.flk_statut_publish  .votre_profil label span{
+    background-color: #9b9b9b;
+    width: 50px;
+    height: 15px;
+    padding: 0 50px;
+    margin: 0 5px;
+}
+
+.logged-in.flk_statut_publish  .votre_profil label span{
+    background-color: white;
+    width: 100px;
+    height: 15px;
+    padding: 0 0px;
+    margin: 0 5px;
+}
+
+.type-post .liste_enfant {
+       height: auto;
+    max-width: 1670px;
+    margin: auto;
+}
+
+.leaflet-popup-content {
+	margin: 13px 30px 20px 30px !important;
+	}
+
+    .loader_custom {
+        width: 16px;
+        height: 16px;
+    }
+
+body .header_shortcode_block.button_hide,
+body .header_shortcode_block.button_hide a {
+    display: none !important;
+}
+
+body .header_shortcode_block a {
+    display: block;
+}
+
+body .body_shortcode_block {
+    display: block;
+}
+
+body .body_shortcode_block.block_close {
+    display: none;
+}
+
+body .body_shortcode_block.block_close_old {
+    display: none;
+}
+
+body .button_ajout_shortcode[data-new="true"] .ajouter,
+body .button_valider_parcelle[data-new="true"] .valider,
+body .button_valider_parcelle[data-new="false"] .editer,
+body .button_ajout_shortcode[data-new="false"] .editer {
+    display: block;
+}
+
+body .button_ajout_shortcode[data-new="false"],
+body .button_ajout_shortcode[data-new="false"] .ajouter,
+body .button_ajout_shortcode[data-new="true"] .editer,
+body .button_valider_parcelle[data-new="true"] .editer {
+    display: none;
+}
+
+/* ~~ Custom de la page "Je loue, je vends" ~~ */
+#formulaire_jeloue_jevends .titre-section {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #8eae58;
+    text-align: center;
+    margin-bottom: 34px;
+}
+
+#formulaire_jeloue_jevends fieldset {
+    padding: 0;
+    border: none;
+}
+
+/* ~~~~ MON PROFIL ~~~~ */
+/* ~~ Regroupement des blocs Nom / Prenom / Date naissance ~~ */
+#formulaire_jeloue_jevends .groupe_nom_prenom_naissance {
+    display: flex;
+   /* align-items: start;*/
+	align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_votre_prenom,
+#formulaire_jeloue_jevends fieldset.fieldset_votre_nom,
+#formulaire_jeloue_jevends fieldset.fieldset_votre_date_de_naissance {
+    display: inline-block;
+}
+
+#formulaire_jeloue_jevends fieldset input:not([type="radio"]) {
+    border: 1px solid #c4c4c4;
+    height: 63px;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 33px;
+    color: #292929;
+    display: block;
+}
+
+#formulaire_jeloue_jevends fieldset input::-webkit-input-placeholder {
+    color: #a6a6a6;
+}
+
+#formulaire_jeloue_jevends fieldset input::-moz-placeholder {
+    color: #a6a6a6;
+}
+
+#formulaire_jeloue_jevends fieldset input:-ms-input-placeholder {
+    color: #a6a6a6;
+}
+
+#formulaire_jeloue_jevends fieldset input::-ms-input-placeholder {
+    color: #a6a6a6;
+}
+
+#formulaire_jeloue_jevends fieldset input::placeholder {
+    color: #a6a6a6;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_votre_prenom input {
+    width: 256px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_votre_nom input {
+    width: 266px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_votre_date_de_naissance input {
+    width: 289px;
+    position: relative;
+    padding-left: 62px ;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_votre_date_de_naissance input::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(/wp-content/uploads/2022/08/calendrier.svg) no-repeat;
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+    border-width: thin;
+    left: 14px;
+    position: absolute;
+}
+
+/* ~~ Regroupement des blocs Adresse / Code Postal / Commune ~~ */
+#formulaire_jeloue_jevends .groupe_adresse_cp_commune {
+    display: flex;
+    /*align-items: start;*/
+	align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_adresse,
+#formulaire_jeloue_jevends fieldset.fieldset_code_postal,
+#formulaire_jeloue_jevends fieldset.fieldset_commune {
+    display: inline-block;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_adresse input {
+    width: 416px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_code_postal input {
+    width: 208px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_commune input {
+    width: 194px;
+}
+
+/* ~~ Regroupement des blocs Telephone / Email / Profil ~~ */
+#formulaire_jeloue_jevends .groupe_tel_email_profil {
+    display: flex;
+	align-items: flex-end;
+    /*align-items: start;*/
+    justify-content: space-between;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_telephone,
+#formulaire_jeloue_jevends fieldset.fieldset_email,
+#formulaire_jeloue_jevends fieldset.fieldset_profil {
+    display: flex;
+    flex-direction: column;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_telephone input {
+    width: 289px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_email input {
+    width: 252px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_profil input {
+    width: 281px;
+}
+
+/* ~~~~ MON OFFRE ~~~~ */
+.h2_votre_offre {
+    margin-top: 95px;
+    margin-bottom: 42px !important;
+}
+
+/* ~~ Gestion de la partie "Contexte de l'offre" ~~ */
+#formulaire_jeloue_jevends div[data-group="votre_offre"] fieldset.fieldset_radio {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: row;
+}
+
+#formulaire_jeloue_jevends div[data-group="votre_offre"] fieldset.fieldset_radio label[for^="contexte"] {
+    width: 20%;
+}
+
+#formulaire_jeloue_jevends div[data-group="votre_offre"] fieldset.fieldset_radio .groupe_radiobuttons {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    width: 80%;
+}
+
+#formulaire_jeloue_jevends div[data-group="votre_offre"] fieldset.fieldset_radio .groupe_radiobuttons .radio_group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+}
+
+#formulaire_jeloue_jevends div[data-group="votre_offre"] fieldset.fieldset_radio .groupe_radiobuttons .radio_group input {
+    margin-right: 6px;
+}
+
+#formulaire_jeloue_jevends div[data-group="votre_offre"] fieldset.fieldset_radio .groupe_radiobuttons .premier_groupe {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+#formulaire_jeloue_jevends div[data-group="votre_offre"] fieldset.fieldset_radio .groupe_radiobuttons .second_groupe {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+}
+
+/* Tricks pour avoir un radio button custom */
+#formulaire_jeloue_jevends div[data-group="votre_offre"] fieldset.fieldset_radio .groupe_radiobuttons .radio_group input {
+    /* masquage de l'input original*/
+    visibility: hidden;
+    position: absolute;
+	width: auto;
+}
+
+#formulaire_jeloue_jevends div[data-group="votre_offre"] fieldset.fieldset_radio .groupe_radiobuttons .radio_group label {
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    /*line-height: 33px;*/
+    color: #292929;
+    margin-bottom: 0 !important;
+}
+
+#formulaire_jeloue_jevends div[data-group="votre_offre"] fieldset.fieldset_radio .groupe_radiobuttons .radio_group input+label:before {
+    height: 13px;
+    width: 13px;
+    margin-right: 6px;
+    content: " ";
+    display: inline-block;
+    vertical-align: baseline;
+    border: 1px solid #898989;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+#formulaire_jeloue_jevends div[data-group="votre_offre"] fieldset.fieldset_radio .groupe_radiobuttons .radio_group input:checked+label:before {
+    background: #8EAE58;
+    border: 1px solid #8EAE58;
+}
+
+#formulaire_jeloue_jevends div[data-group="votre_offre"] fieldset.fieldset_radio .groupe_radiobuttons .radio_group input+label:before {
+    border-radius: 50%;
+}
+
+/* FIN du Tricks */
+/* ~~ Regroupement des blocs Date de dispo / Cépage ou Cuvage ~~ */
+#formulaire_jeloue_jevends .groupe_dispo_cuvage-cepage {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 36px;
+    margin-top: 59px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_date_de_disponibilite {
+    display: flex;
+    align-items: center;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_date_de_disponibilite label {
+    margin-right: 20px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_vigne_ou_cuvage {
+    display: inline-block;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_date_de_disponibilite input {
+    width: 262px;
+    position: relative;
+    padding-left: 62px ;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_vigne_ou_cuvage select {
+    width: 398px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_date_de_disponibilite input::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(/wp-content/uploads/2022/08/calendrier.svg) no-repeat;
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+    border-width: thin;
+    left: 14px;
+    position: absolute;
+}
+
+.validation input[value='PUBLIER L’OFFRE']:disabled {
+    opacity: 0.5;
+}
+
+
+/* ~~ On cache mes shorcode au chargement de la page ~~ */
+/* #cuvage .ajout_cuvage:first-of-type,  */
+/* #parcelles .ajout_parcelle:first-of-type{ */
+/* display: none; */
+/* } */
+
+/* ~~~~ AJOUT DE PARCELLE ~~~~ */
+/* ~~ Bloc d'édition d'une parcelle - accordion ~~ */
+
+#parcelles .focused .select-styled{
+    background-color: #fff;
+}
+
+#formulaire_jeloue_jevends .bloc_edition_parcelle{  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 14px 33px;
+    margin-bottom: 30px;
+}
+#formulaire_jeloue_jevends .bloc_edition_cuvage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 14px 33px;
+    margin-bottom: 70px;
+}
+
+#formulaire_jeloue_jevends .bloc_edition_parcelle p,
+#formulaire_jeloue_jevends .bloc_edition_cuvage p {
+    margin-bottom: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #292929;
+}
+
+#formulaire_jeloue_jevends .bloc_edition_parcelle div,
+#formulaire_jeloue_jevends .bloc_edition_cuvage div {
+    height: 17px;
+}
+
+#formulaire_jeloue_jevends .bloc_edition_parcelle div a,
+#formulaire_jeloue_jevends .bloc_edition_cuvage div a {
+    display: inline-block;
+    height: 17px;
+    width: 17px;
+    cursor: pointer;
+}
+
+#formulaire_jeloue_jevends .bloc_edition_parcelle div a img,
+#formulaire_jeloue_jevends .bloc_edition_cuvage div a img {
+    width: 17px;
+    height: 17px;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+#formulaire_jeloue_jevends .bloc_edition_parcelle div a.edit,
+#formulaire_jeloue_jevends .bloc_edition_cuvage div a.edit {
+    margin-right: 16px;
+}
+
+#formulaire_jeloue_jevends .block_parcelle_creation h2,
+#formulaire_jeloue_jevends .block_cuvage_creation h2 {
+    height: 64px;
+    background-color: #e5f1cf;
+    border: 1px solid #e5f1cf;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 64px;
+}
+
+#formulaire_jeloue_jevends .block_parcelle_creation h3,
+#formulaire_jeloue_jevends .block_cuvage_creation h3 {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#formulaire_jeloue_jevends .block_parcelle_creation p,
+#formulaire_jeloue_jevends .block_cuvage_creation p {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+/* ~~ Regroupement des blocs Commune / Section Cadastrale / N°Parcelle ~~ */
+#formulaire_jeloue_jevends .groupe_commune_sectioncadastrale_numparcelle {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+#formulaire_jeloue_jevends .label_input_numparcelle {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    max-width: 172px;
+    margin-right: 57px;
+}
+
+#formulaire_jeloue_jevends .groupe_commune_sectioncadastrale_numparcelle .fieldset_code_insee .select,
+#formulaire_jeloue_jevends .groupe_commune_sectioncadastrale_numparcelle .fieldset_section input {
+    /*max-width: 198px;*/
+    max-width: 270px;
+}
+
+ input#field_62eb9f240fb78 {
+    /* max-width: 198px; */
+    max-width: 201px;
+}
+
+#formulaire_jeloue_jevends .groupe_commune_sectioncadastrale_numparcelle .fieldset_numero_parcelle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#formulaire_jeloue_jevends .groupe_commune_sectioncadastrale_numparcelle a {
+    display: block;
+    width: 206px;
+    height: 57px;
+    border-radius: 30px;
+    background-color: #e5f1cf;
+    font-family: "BC Alphapipe", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 55px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* ~~ Regroupement des blocs Surface / Coord GPS ~~ */
+#formulaire_jeloue_jevends .instructions {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 11px;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#formulaire_jeloue_jevends .groupe_surface_coordgps {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    margin-top: 37px;
+}
+
+#formulaire_jeloue_jevends .groupe_surface_coordgps fieldset.fieldset_surface {
+    margin-right: 67px;
+}
+
+#formulaire_jeloue_jevends .groupe_surface_coordgps fieldset.fieldset_surface input {
+    max-width: 198px;
+}
+
+#formulaire_jeloue_jevends .groupe_surface_coordgps fieldset.fieldset_coordonees_gps input {
+    max-width: 437px;
+    width: 437px;
+    cursor: no-drop;
+}
+/*
+body:not(.logged-in) fieldset.fieldset_coordonnees_gps, 
+body:not(.logged-in) fieldset.fieldset_coordonees_gps {
+    display : none;
+}*/
+
+/* ~~ Regroupement des blocs Nature de l'offre / Type de sol ~~ */
+#formulaire_jeloue_jevends .sous_group_titre {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #296068;
+    margin-top: 37px;
+    margin-bottom: 20px;
+}
+
+#formulaire_jeloue_jevends .groupe_nature_type {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
+#formulaire_jeloue_jevends .groupe_nature_type fieldset.fieldset_nature_de_l’offre {
+    margin-right: 66px;
+}
+
+#formulaire_jeloue_jevends .groupe_nature_type fieldset.fieldset_nature_de_l’offre .select {
+    width: 270px;
+}
+
+#formulaire_jeloue_jevends .groupe_nature_type fieldset.fieldset_type_de_sol .select {
+    width: 260px;
+}
+
+/* ~~ Regroupement des blocs AOC / Cepage / Taille de vigne / Agriculture biologique ~~ */
+#formulaire_jeloue_jevends .groupe_aoc_cepage_taille_agribio {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+#formulaire_jeloue_jevends .groupe_aoc_cepage_taille_agribio fieldset.fieldset_aoc .select {
+    /*width: 230px;*/
+    max-width: 270px;
+}
+
+#formulaire_jeloue_jevends .groupe_aoc_cepage_taille_agribio fieldset.fieldset_cepage .select {
+    width: 181px;
+}
+
+#formulaire_jeloue_jevends .groupe_aoc_cepage_taille_agribio fieldset.fieldset_taille_de_la_vigne .select {
+    width: 172px;
+}
+
+#formulaire_jeloue_jevends .groupe_aoc_cepage_taille_agribio fieldset.fieldset_agriculture_biologique .select {
+    width: 235px;
+}
+
+/* ~~ Regroupement des blocs Vinification ~~ */
+#formulaire_jeloue_jevends .groupe_vignifi {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+#formulaire_jeloue_jevends .groupe_vignifi fieldset.fieldset_vinification .select {
+    width: 199px;
+}
+
+/* ~~ Regroupement des blocs Type de cession / Observations ~~ */
+#formulaire_jeloue_jevends .groupe_typecession_observations {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+#formulaire_jeloue_jevends .groupe_typecession_observations fieldset.fieldset_type_de_cession_parcelle {
+    margin-right: 53px;
+}
+
+#formulaire_jeloue_jevends .groupe_typecession_observations fieldset.fieldset_type_de_cession_parcelle .select {
+    width: 260px;
+}
+
+#formulaire_jeloue_jevends .groupe_typecession_observations fieldset.fieldset_parcelle_observations,
+#formulaire_jeloue_jevends .groupe_typecession_observations fieldset.fieldset_parcelle_observations textarea {
+    width: 100%;
+}
+
+#formulaire_jeloue_jevends .groupe_typecession_observations fieldset.fieldset_parcelle_observations textarea {
+    border: 1px solid #c4c4c4;
+    border: 9px 27px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    color: #292929;
+    resize: none;
+}
+
+/* ~~ Bouton d'ajout de parcelle / cuvage ~~ */
+#formulaire_jeloue_jevends .button_ajout_parcelle[data-new="false"] {
+    display: none !important;
+}
+
+#formulaire_jeloue_jevends .bouton-valid-delete {
+    display: flex;
+    justify-content: center;
+    margin: 36px auto 59px auto;
+}
+
+#formulaire_jeloue_jevends .button_valider_parcelle,
+#formulaire_jeloue_jevends .button_ajout_cuvage,
+#formulaire_jeloue_jevends .supprimer.parcelle {
+    font-family: 'BC Alphapipe', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #E5F1CF;
+    border-radius: 30px;
+    display: block;
+    height: 57px;
+    padding: 19px 19px;
+    max-width: 220px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+
+
+
+#formulaire_jeloue_jevends .button_ajout_parcelle {
+    font-family: 'BC Alphapipe', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #E5F1CF;
+    border-radius: 30px;
+    display: block;
+    height: 57px;
+    padding: 19px 19px;
+    max-width: 220px;
+    margin: 0 auto 50px auto;
+    cursor: pointer;
+}
+
+#formulaire_jeloue_jevends .button_ajout_parcelle {
+    padding: 19px 21px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: none;
+    background: #296068;
+    color: white;
+}
+
+/* ~~~~ AJOUT DE CUVAGE ~~~~ */
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves {
+    margin-bottom: 58px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    color: #292929;
+    margin-bottom: 22px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .radio_group, 
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .checkbox_group  {
+    margin-right: 50px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .groupe_radiobuttons_cuves {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: start;
+    margin-top: 20px;
+}
+
+.formulaire_validation .groupe_radio.buttons_conditions, 
+.formulaire_validation .groupe_radio.buttons_conditions .checkbox_group_bloc {
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    /*margin-top: 20px;*/
+    flex-direction: column;
+}
+
+
+/* On place chaque checkbox */
+.formulaire_validation .groupe_radio.buttons_conditions .checkbox_group_bloc .cgu {
+    order: 1;
+}
+
+.formulaire_validation .groupe_radio.buttons_conditions .checkbox_group_bloc .safer {
+    order: 2;
+}
+
+.formulaire_validation .groupe_radio.buttons_conditions .checkbox_group_bloc .contact {
+    order: 3;
+}
+
+/* Tricks pour avoir un radio button custom */
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .radio_group input, 
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .checkbox_group input {
+    /* masquage de l'input original*/
+    visibility: hidden;
+    position: absolute;
+	width: auto;
+}
+
+.formulaire_validation .groupe_radio.buttons_conditions .checkbox_group  input{
+    /* masquage de l'input original*/
+    visibility: hidden;
+    position: absolute;
+	width: auto;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .radio_group label, 
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .checkbox_group label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    /*line-height: 33px;*/
+    color: #292929;
+    margin-left: 6px;
+}
+
+.formulaire_validation .groupe_radio.buttons_conditions .checkbox_group label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    /*line-height: 33px;*/
+    color: #292929;
+    margin-left: 6px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .checkbox_group  {
+    position: relative;
+}
+
+.formulaire_validation .checkbox_group  {
+    position: relative;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .checkbox_group input {
+    height: 15px;
+    visibility: visible;
+    opacity: 0;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+}
+
+.formulaire_validation .groupe_radio.buttons_conditions .checkbox_group  input{
+    height: 15px;
+    visibility: visible;
+    opacity: 0;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    width: 15px;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .radio_group input+label:before, 
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .checkbox_group input+label:before{
+    height: 13px;
+    width: 13px;
+    margin-right: 6px;
+    content: " ";
+    display: inline-block;
+    vertical-align: baseline;
+    border: 1px solid #898989;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.formulaire_validation .groupe_radio.buttons_conditions .checkbox_group input+label:before{
+    height: 13px;
+    width: 13px;
+    margin-right: 6px;
+    content: " ";
+    display: inline-block;
+    vertical-align: baseline;
+    border: 1px solid #898989;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .radio_group input:checked+label:before, 
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .checkbox_group input:checked+label:before {
+    background: #8EAE58;
+    border: 1px solid #8EAE58;
+}
+
+.formulaire_validation .groupe_radio.buttons_conditions .checkbox_group input:checked+label:before {
+    background: #8EAE58;
+    border: 1px solid #8EAE58;
+}
+
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .radio_group input+label:before, 
+#formulaire_jeloue_jevends fieldset.fieldset_types_de_cuves .checkbox_group input+label:before {
+    border-radius: 5%;
+}
+
+.formulaire_validation .groupe_radio.buttons_conditions .checkbox_group input+label:before {
+    border-radius: 5%;
+}
+
+/* FIN du Tricks */
+#formulaire_jeloue_jevends .groupe_surface_capacite_effluents_stockage {
+    display: flex;
+    align-items: start;
+    flex-wrap:wrap;
+    gap: 1em;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#formulaire_jeloue_jevends .groupe_surface_capacite_effluents_stockage fieldset.fieldset_surface_du_cuvage,
+#formulaire_jeloue_jevends .groupe_surface_capacite_effluents_stockage fieldset.fieldset_gestion_des_effluents .select {
+    width: 199px;
+}
+
+#formulaire_jeloue_jevends .groupe_surface_capacite_effluents_stockage fieldset.fieldset_capacite_du_cuvage,
+#formulaire_jeloue_jevends .groupe_surface_capacite_effluents_stockage fieldset.fieldset_stockage_bouteille .select {
+    width: 181px;
+}
+
+#formulaire_jeloue_jevends .groupecuv_typescession_observations {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}
+
+#formulaire_jeloue_jevends .groupecuv_typescession_observations fieldset.fieldset_type_de_cession_cuvage .select {
+    width: 260px;
+}
+
+
+/* ~~ Fin du custom de la page "Je loue, je vends" ~~ */
+
+/* ~~ Debut du custom de la page récap de l'offre ~~ */
+
+.formulaire_validation .text-valider div.form-bloc {
+    display: flex;
+    margin-top: 26px;
+    border: none;
+    width: 500px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.formulaire_validation .text-valider div.form-bloc .validation {
+    margin-top: 0;
+}
+/* bouton de retour */
+.formulaire_validation .text-valider div.form-bloc input.retour {
+    color: white;
+    font-size: 16px;
+    font-family: 'Bc Alphapipe';
+    line-height: 19.2px;
+    font-weight: 600;
+    background-color: #296068;
+    width: 206px;
+    height: 57px;
+    background-color: #296068;
+    border-radius: 30px;
+    border: none;
+}
+/* ~~ Fin du custom de la page récap de l'offre ~~ */
+
+/* ~~ Debut du custom de la page "Je cherche" ~~ */
+
+body.flk_statut_publish .flk.votre_offre,
+body.flk_statut_publish .flk.formulaire_validation {
+    display: none;
+}
+
+/* Gestion des popups de map */
+/*popup vigne*/
+.popup_marker-vigne {
+}
+.popup_marker-vigne .titre,
+.popup_marker-vigneVigne .titre {
+    font-family: 'BC Alphapipe', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #8DCFD9;    
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.popup_marker-vigne .text-popup_marker-vigne,
+.popup_marker-vigneVigne .text-popup_marker-vigne {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    color: #292929;
+    margin: 0 0 10px 0;
+}
+.popup_marker-vigne .button-popup_marker-vigne,
+.popup_marker-vigne .button-popup_marker-vigne:hover,
+.popup_marker-vigne .button-popup_marker-vigne:focus,
+.popup_marker-vigne .button-popup_marker-vigne:active,
+.popup_marker-vigneVigne .button-popup_marker-vigne,
+.popup_marker-vigneVigne .button-popup_marker-vigne:hover,
+.popup_marker-vigneVigne .button-popup_marker-vigne:focus,
+.popup_marker-vigneVigne .button-popup_marker-vigne:active {
+    font-family: 'BC Alphapipe', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #8DCFD9;
+    border-radius: 30px;
+    margin-top: 8px;
+    padding: 8px 35px;
+    color: #fff;
+    display: inline-block;
+}
+/*popup cuvage*/
+.popup_marker-cuvage {
+}
+.popup_marker-cuvage .titre,
+.popup_marker-cuvageCuvage .titre {
+    font-family: 'BC Alphapipe', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #C2DC96;    
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.popup_marker-cuvage .text-popup_marker-cuvage,
+.popup_marker-cuvageCuvage .text-popup_marker-cuvage {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    color: #292929;
+    margin: 0 0 10px 0;
+}
+.popup_marker-cuvage .button-popup_marker-cuvage,
+.popup_marker-cuvage .button-popup_marker-cuvage:hover,
+.popup_marker-cuvage .button-popup_marker-cuvage:active,
+.popup_marker-cuvage .button-popup_marker-cuvage:focus,
+.popup_marker-cuvageCuvage .button-popup_marker-cuvage,
+.popup_marker-cuvageCuvage .button-popup_marker-cuvage:hover,
+.popup_marker-cuvageCuvage .button-popup_marker-cuvage:active,
+.popup_marker-cuvageCuvage .button-popup_marker-cuvage:focus {
+    font-family: 'BC Alphapipe', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #C2DC96;
+    border-radius: 30px;
+    padding: 8px 35px;
+    margin-top: 8px;
+    color: #fff;
+    display: inline-block;
+}
+/*popup offre complète*/
+.popup_marker-complete {
+}
+.popup_marker-complete .titre,
+.popup_marker-completeComplete .titre {
+    font-family: 'BC Alphapipe', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFBE99;    
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.popup_marker-complete .text-popup_marker-complete,
+.popup_marker-completeComplete .text-popup_marker-complete {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    color: #292929;
+    margin: 0 0 10px 0;
+}
+.popup_marker-complete .button-popup_marker-complete,
+.popup_marker-complete .button-popup_marker-complete:hover,
+.popup_marker-complete .button-popup_marker-complete:active,
+.popup_marker-complete .button-popup_marker-complete:focus,
+.popup_marker-completeComplete .button-popup_marker-complete,
+.popup_marker-completeComplete .button-popup_marker-complete:hover,
+.popup_marker-completeComplete .button-popup_marker-complete:active,
+.popup_marker-completeComplete .button-popup_marker-complete:focus {
+    font-family: 'BC Alphapipe', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #FFBE99;
+    border-radius: 30px;
+    padding: 8px 35px;
+    margin-top: 8px;
+    color: #fff;
+    display: inline-block;
+}
+
+.leaflet-popup{
+    bottom: 35px !important;
+}
+/* .leaflet-popup-content {
+    min-width: 235px !important;
+} */
+
+.div_btn_recherche {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+
+}
+.div_btn_recherche div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 40px;
+
+}
+.div_btn_recherche div .button_recherche_shortcode span {
+    margin-left: 0 !important;
+}
+.div_btn_recherche .button_reinitialisation_filtres {
+    font-family: "Poppins", sans-serif;
+    color: #D25F4E !important;
+    font-size: 14px;
+    margin-left: 0;
+    margin-top: 0.625em;
+}
+
+.offre_vide{
+    margin: 05px -10px 10px -10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.div_btn_recherche .button_reinitialisation_filtres i {
+    margin-right: .5rem;
+}
+
+/* ~~ Fin du custom de la page "Je cherche" ~~ */

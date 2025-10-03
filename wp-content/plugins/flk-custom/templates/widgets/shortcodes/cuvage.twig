@@ -1,0 +1,83 @@
+
+<div class="header_parcelle_block header_shortcode_block button_hide bloc_edition_cuvage">
+    <p> FORMULAIRE POUR UN CUVAGE </h2>
+    <div>
+        <a class="edit"><img src="/wp-content/uploads/2022/08/outil-crayon.svg"></a>
+        <a class="supprimer"><img src="/wp-content/uploads/2022/08/sup-button.svg"></a>
+    </div>
+</div>
+
+
+<div class="body_parcelle_block body_shortcode_block block_open block_cuvage_creation">
+    <h2>Formulaire pour un cuvage</h2>
+    <h3> Ajouter un cuvage à reprendre  :  </h3>
+    <p>Par ce formulaire, vous pouvez mettre en avant un cuvage à la vente ou à la location. Pour toute difficulté dans le remplissage du formulaire, vous pouvez nous contacter par mail ou téléphone pour une assistance dans la rédaction de l’offre.</p>
+    {% for key, sous_group in inputs %}
+        <div class="{{key}} sous_group sous_group_{{key}}" data-key="{{key}}">
+            <h3 class="sous_group_titre">{{sous_group.titre}}</h3> {# On affiche le titre du sous groupe #}
+            {% for input in sous_group.champs %} {# On parcours les champs du sous groupe #}
+                <fieldset class="{% if input.required %}fieldset_required{% endif %} fieldset_{{input.type}} fieldset_{{input.name}} fieldset_{{input.type}}">
+                    <label for="{{input.name}}">{{input.label}}</label>
+                    {% if input.option %}
+                            {% if input.type == "select" %}
+                                <select id="{{input.data_key|trim}}" name="{{input.name|trim}}" {% if input.required %} required {% endif %}>
+                                    {% if input.options_value %}
+                                        <option value="_">{{input.label}}</option>
+                                        {% for k, option in input.options_value %}
+                                            {% if k == input.default_value %}
+                                                <option value="{{k}}" selected="selected">{{option}}</option>
+                                            {% else %}
+                                                <option value="{{k}}">{{option}}</option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                </select>
+                            {% elseif input.type == "radio" %}
+                                <input type="hidden" name="flk_radio" value="{{input.name}}">
+                                {% if input.options_value %}
+                                    {% for j, radio in input.options_value %}
+                                        <div class="radio_group radio_group_">
+                                            {% if j == input.default_value %}
+                                                <input type="radio" id="{{j|trim}}_cuvage" name="{{input.name|trim}}" value="{{j}}" checked>
+                                            {% else %}
+                                                <input type="radio" id="{{j|trim}}_cuvage" name="{{input.name|trim}}" value="{{j}}">
+                                            {% endif %}
+                                            <label for="{{j}}">{{radio}}</label>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% elseif input.type == "checkbox" %}
+                                <input type="hidden" name="flk_checkbox" value="{{input.name}}">
+                                {% if input.options_value %}
+                                    {% for j, checkbox in input.options_value %}
+                                        <div class="checkbox_group checkbox_group_">
+                                            {% if j == input.default_value %}
+                                                <input type="checkbox" id="{{j|trim}}_cuvage" name="{{input.name|trim}}" value="{{j}}" checked>
+                                            {% else %}
+                                                <input type="checkbox" id="{{j|trim}}_cuvage" name="{{input.name|trim}}" value="{{j}}">
+                                            {% endif %}
+                                            <label for="{{j}}">{{checkbox}}</label>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endif %}  
+                    {% else %}
+                        {% if input.type == "textarea" %}
+                            <textarea rows="4" type="{{input.type}}" id="{{input.data_key|trim}}" name="{{input.name|trim}}" {% if input.required %} required {% endif %} placeholder="{{input.placeholder}}" {% if input.default_value != false %} value="{{input.default_value}}" {% endif %}></textarea>
+                        {% else %}
+                            <input type="{{input.type}}" id="{{input.data_key|trim}}" name="{{input.name|trim}}" {% if input.required %} required {% endif %} placeholder="{{input.placeholder}}" {% if input.default_value != false %} value="{{input.default_value}}" {% endif %}>
+                        {% endif %}
+                        {% if input.instructions|length > 0 %}
+                            <span class="instructions" for="{{input.name}}"> {{input.instructions}} </span>			
+                        {% endif %}
+                    {% endif %}
+                </fieldset>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <!-- <a class="button_ajout_shortcode button_ajout_cuvage" data-shorcode="flk_cuvage" data-new="true" data-cuve="1"> <span class="ajouter">AJOUTER LE CUVAGE</span> <span class="editer">MODIFIER LE CUVAGE</span></a> -->
+    <div class="bouton-valid-delete">
+        <a class="button_ajout_shortcode button_ajout_cuvage" data-shorcode="flk_cuvage" data-new="true" data-cuve="1"> <span class="ajouter">AJOUTER LE CUVAGE</span> <span class="editer">MODIFIER LE CUVAGE</span></a>
+        <a class="supprimer parcelle" title="Supprimer la parcelle"> <span class="">SUPPRIMER LE CUVAGE</span></a>
+    </div>
+</div>

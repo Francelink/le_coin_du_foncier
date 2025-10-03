@@ -1,0 +1,31 @@
+<div class="text-valider">
+    <!-- <span>Pour publier votre offre, il est obligatoire de cocher les cases des conditions générales, des mensions légales ainsi que l</span> -->
+    <div class="groupe_radio buttons_conditions">
+        <div class="checkbox_group checkbox_group_bloc checkbox_group_">
+            {% for j, checkbox in cases.options_value %}
+                <div class="checkbox_group checkbox_group_ {{j}}">
+                    <input type="checkbox" id="{{j|trim}}_conditions" name="{{cases.name|trim}}" value="{{j}}">
+                    {% if j == 'cgu' %}
+                        <label for="{{ cases.name }}">J'accepte <a href="/cgu/" target="_blank">les conditions générales d'utilisation</a> et <a href="/mentions-legales/" target="_blank">les mentions légales</a> du site lecoindufoncier<span style="color: #ff0000 ">*</span></label>
+                    {% elseif j == 'safer'  %}
+                        <label for="{{ cases.name }}">Je reconnais avoir pris connaissance des <a href="/safer/" target="_blank">dispositions réglementaires autour de la vente et location de biens agricoles </a>(SAFER)<span style="color: #ff0000 ">*</span></label>
+                    {% else  %}
+                        <label for="{{ cases.name }}">J'accepte que des partenaires de la Chambre d'agriculture du Rhône me recontactent autour de la mise en avant de mon bien</label>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            {# <label for="">{{ case.options_value.true }} *</label> #}
+        </div>
+    </div>
+
+    <div class="form-bloc">
+        <input class="retour" type="button" value="MODIFIER MON OFFRE" onclick="history.back()">
+        <form action="POST" class="validation">
+            <input type="submit" value="PUBLIER L’OFFRE" data-admin="false">
+            <input type="hidden" name="parent_id" value="{{post.parent.id}}">
+            {% for key, enfant in post.enfants %}
+                <input type="hidden" class="enfant" name="post_enfant_{{key}}" value="{{enfant.id}}">
+            {% endfor %}
+        </form>
+    </div>
+</div>
