@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Exemple de fichier php pour la création d'un shortcode
  */
@@ -8,19 +9,22 @@ defined('ABSPATH') || exit;
 /**
  * Shortcode cart class.
  */
-class FLK_Shortcode_Print_Liste_Enfant {
+class FLK_Shortcode_Print_Liste_Enfant
+{
 
     /**
      * Output the Shortcode Exemplee.
      *
      * @param array $atts Shortcode attributes.
      */
-    public static function output($atts) {
+    public static function output($atts)
+    {
         global $post;
         $data           = array();
         $data["inputs"] = array();
         /// on récupère le statut de l'article
         $data["statut"] = get_post_status($post);
+        // $_GET['post_id']=$post->ID;
         // td head
         // td body
         $data["table"]           = array();
@@ -69,76 +73,31 @@ class FLK_Shortcode_Print_Liste_Enfant {
                                         $sub_field_objet = get_sub_field_object($key);
                                         $type            = $sub_field_objet["type"];
                                         switch ($type) {
-                                        case 'radio':
-                                            if (isset($sub_field_objet["choices"][$field])) {
-                                                $data["inputs"][$k][$sous_groupe]['champs'][$sub_field_objet["menu_order"]] = array(
-                                                    "key"   => $sub_field_objet["key"],
-                                                    "name"  => $field,
-                                                    "label" => $sub_field_objet["label"],
-                                                    "value" => $sub_field_objet["choices"][$field],
-                                                );
-                                                array_push($data["table"]["tdbody"][$k], array(
-                                                    "key"   => $sub_field_objet["key"],
-                                                    "name"  => $field,
-                                                    "label" => $sub_field_objet["label"],
-                                                    "value" => $sub_field_objet["choices"][$field],
-                                                ));
-                                            } else {
-                                                array_push($data["table"]["tdbody"][$k], array(
-                                                    "key"   => "",
-                                                    "name"  => "",
-                                                    "label" => "",
-                                                    "value" => "",
-                                                ));
-                                            }
-                                            // array_push($data["table"]["tdbody"][$k], $sub_field_objet["choices"][$field]);
-                                            break;
-                                        case 'select':
-                                            if (isset($sub_field_objet["choices"][$field])) {
-                                                $data["inputs"][$k][$sous_groupe]['champs'][$sub_field_objet["menu_order"]] = array(
-                                                    "key"   => $sub_field_objet["key"],
-                                                    "name"  => $field,
-                                                    "label" => $sub_field_objet["label"],
-                                                    "value" => $sub_field_objet["choices"][$field],
-                                                );
-                                                array_push($data["table"]["tdbody"][$k], array(
-                                                    "key"   => $sub_field_objet["key"],
-                                                    "name"  => $field,
-                                                    "label" => $sub_field_objet["label"],
-                                                    "value" => $sub_field_objet["choices"][$field],
-                                                ));
-                                                // array_push($data["table"]["tdbody"][$k], $sub_field_objet["choices"][$field]);
-                                            } else {                                                
-                                                array_push($data["table"]["tdbody"][$k], array(
-                                                    "key"   => "",
-                                                    "name"  => "",
-                                                    "label" => "",
-                                                    "value" => "",
-                                                ));
-                                            }
-                                            break;
-                                        case 'checkbox':
-                                            if ( is_array($field) ) { // on a plusieur valeur 
-                                                $array_value = array();
-                                                foreach ($field as $key => $value) {
-                                                   if (isset($sub_field_objet["choices"][$value])) {
-                                                     array_push($array_value, $sub_field_objet["choices"][$value]);
-                                                   }
+                                            case 'radio':
+                                                if (isset($sub_field_objet["choices"][$field])) {
+                                                    $data["inputs"][$k][$sous_groupe]['champs'][$sub_field_objet["menu_order"]] = array(
+                                                        "key"   => $sub_field_objet["key"],
+                                                        "name"  => $field,
+                                                        "label" => $sub_field_objet["label"],
+                                                        "value" => $sub_field_objet["choices"][$field],
+                                                    );
+                                                    array_push($data["table"]["tdbody"][$k], array(
+                                                        "key"   => $sub_field_objet["key"],
+                                                        "name"  => $field,
+                                                        "label" => $sub_field_objet["label"],
+                                                        "value" => $sub_field_objet["choices"][$field],
+                                                    ));
+                                                } else {
+                                                    array_push($data["table"]["tdbody"][$k], array(
+                                                        "key"   => "",
+                                                        "name"  => "",
+                                                        "label" => "",
+                                                        "value" => "",
+                                                    ));
                                                 }
-                                                $data["inputs"][$k][$sous_groupe]['champs'][$sub_field_objet["menu_order"]] = array(
-                                                    "key"   => $sub_field_objet["key"],
-                                                    "name"  =>  $sub_field_objet["key"],
-                                                    "label" => $sub_field_objet["label"],
-                                                    "value" => $array_value,
-                                                );
-                                                array_push($data["table"]["tdbody"][$k], array(
-                                                    "key"   => $sub_field_objet["key"],
-                                                    "name"  =>  $sub_field_objet["key"],
-                                                    "label" => $sub_field_objet["label"],
-                                                    "value" => $array_value,
-                                                ));
-                                            } else { // on a un valeur 
-                                                # code...
+                                                // array_push($data["table"]["tdbody"][$k], $sub_field_objet["choices"][$field]);
+                                                break;
+                                            case 'select':
                                                 if (isset($sub_field_objet["choices"][$field])) {
                                                     $data["inputs"][$k][$sous_groupe]['champs'][$sub_field_objet["menu_order"]] = array(
                                                         "key"   => $sub_field_objet["key"],
@@ -153,7 +112,7 @@ class FLK_Shortcode_Print_Liste_Enfant {
                                                         "value" => $sub_field_objet["choices"][$field],
                                                     ));
                                                     // array_push($data["table"]["tdbody"][$k], $sub_field_objet["choices"][$field]);
-                                                } else {                                                
+                                                } else {
                                                     array_push($data["table"]["tdbody"][$k], array(
                                                         "key"   => "",
                                                         "name"  => "",
@@ -161,23 +120,68 @@ class FLK_Shortcode_Print_Liste_Enfant {
                                                         "value" => "",
                                                     ));
                                                 }
-                                            }
-                                            break;
-                                        default:
-                                            $data["inputs"][$k][$sous_groupe]['champs'][$sub_field_objet["menu_order"]] = array(
-                                                "key"   => $sub_field_objet["key"],
-                                                "name"  => $field,
-                                                "label" => $sub_field_objet["label"],
-                                                "value" => $field,
-                                            );
-                                            array_push($data["table"]["tdbody"][$k], array(
-                                                "key"   => $sub_field_objet["key"],
-                                                "name"  => $field,
-                                                "label" => $sub_field_objet["label"],
-                                                "value" => $field,
-                                            ));
-                                            // array_push($data["table"]["tdbody"][$k], $field);
-                                            break;
+                                                break;
+                                            case 'checkbox':
+                                                if (is_array($field)) { // on a plusieur valeur 
+                                                    $array_value = array();
+                                                    foreach ($field as $key => $value) {
+                                                        if (isset($sub_field_objet["choices"][$value])) {
+                                                            array_push($array_value, $sub_field_objet["choices"][$value]);
+                                                        }
+                                                    }
+                                                    $data["inputs"][$k][$sous_groupe]['champs'][$sub_field_objet["menu_order"]] = array(
+                                                        "key"   => $sub_field_objet["key"],
+                                                        "name"  =>  $sub_field_objet["key"],
+                                                        "label" => $sub_field_objet["label"],
+                                                        "value" => $array_value,
+                                                    );
+                                                    array_push($data["table"]["tdbody"][$k], array(
+                                                        "key"   => $sub_field_objet["key"],
+                                                        "name"  =>  $sub_field_objet["key"],
+                                                        "label" => $sub_field_objet["label"],
+                                                        "value" => $array_value,
+                                                    ));
+                                                } else { // on a un valeur 
+                                                    # code...
+                                                    if (isset($sub_field_objet["choices"][$field])) {
+                                                        $data["inputs"][$k][$sous_groupe]['champs'][$sub_field_objet["menu_order"]] = array(
+                                                            "key"   => $sub_field_objet["key"],
+                                                            "name"  => $field,
+                                                            "label" => $sub_field_objet["label"],
+                                                            "value" => $sub_field_objet["choices"][$field],
+                                                        );
+                                                        array_push($data["table"]["tdbody"][$k], array(
+                                                            "key"   => $sub_field_objet["key"],
+                                                            "name"  => $field,
+                                                            "label" => $sub_field_objet["label"],
+                                                            "value" => $sub_field_objet["choices"][$field],
+                                                        ));
+                                                        // array_push($data["table"]["tdbody"][$k], $sub_field_objet["choices"][$field]);
+                                                    } else {
+                                                        array_push($data["table"]["tdbody"][$k], array(
+                                                            "key"   => "",
+                                                            "name"  => "",
+                                                            "label" => "",
+                                                            "value" => "",
+                                                        ));
+                                                    }
+                                                }
+                                                break;
+                                            default:
+                                                $data["inputs"][$k][$sous_groupe]['champs'][$sub_field_objet["menu_order"]] = array(
+                                                    "key"   => $sub_field_objet["key"],
+                                                    "name"  => $field,
+                                                    "label" => $sub_field_objet["label"],
+                                                    "value" => $field,
+                                                );
+                                                array_push($data["table"]["tdbody"][$k], array(
+                                                    "key"   => $sub_field_objet["key"],
+                                                    "name"  => $field,
+                                                    "label" => $sub_field_objet["label"],
+                                                    "value" => $field,
+                                                ));
+                                                // array_push($data["table"]["tdbody"][$k], $field);
+                                                break;
                                         };
                                     }
                                 }
@@ -192,13 +196,14 @@ class FLK_Shortcode_Print_Liste_Enfant {
         } else { // l'offre n'à des parcelles ou des cuvages
             var_dump(0);
         };
-        if ( isset($category_id) ) {
+        if (isset($category_id)) {
             $data["table"]["tdhead"] = self::getTdHead($category_id);
         }
         FLK_Render_template::renderTemplate('widgets/shortcodes/print-liste-enfant', $data);
     }
 
-    public static function getTdHead($category_id) {
+    public static function getTdHead($category_id)
+    {
         $data = array();
         if ($category_id === 13) { // c'est un cuvage
             $enfant            = 1261; // article de base pour récuperer les champs
@@ -210,7 +215,7 @@ class FLK_Shortcode_Print_Liste_Enfant {
         } else { // c'est une parcelle
             $enfant            = 1185;
             $sous_groupe_array = array(
-                "ajouter_une_parcelle", 
+                "ajouter_une_parcelle",
                 "terrain",
                 "vigne_et_vin",
                 "complements",

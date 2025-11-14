@@ -20,7 +20,8 @@ if (class_exists('FLK_Action_Obtenir_Les_Infos', false)) {
 /**
  * FLK_Produit_Simple Class.
  */
-class FLK_Action_Obtenir_Les_Infos extends \ElementorPro\Modules\Forms\Classes\Action_Base{
+class FLK_Action_Obtenir_Les_Infos extends \ElementorPro\Modules\Forms\Classes\Action_Base
+{
     /**
      * Déclaration d'une propriété
      *
@@ -33,19 +34,23 @@ class FLK_Action_Obtenir_Les_Infos extends \ElementorPro\Modules\Forms\Classes\A
      * Constructeurs
      *
      */
-    public function __construct() {
+    public function __construct()
+    {
         add_action('wp_mail_failed', array($this, 'onMailError'));
     }
 
-    public function get_name() {
+    public function get_name()
+    {
         return 'obtenir_les_infos';
     }
 
-    public function get_label() {
+    public function get_label()
+    {
         return 'obtenir_les_infos';
     }
 
-    public function register_settings_section($widget) {
+    public function register_settings_section($widget)
+    {
 
         /*$widget->start_controls_section(
     'custom_action_section',
@@ -56,14 +61,24 @@ class FLK_Action_Obtenir_Les_Infos extends \ElementorPro\Modules\Forms\Classes\A
     ],
     ]
     );*/
-
     }
 
-    public function run($record, $ajax_handler) {
+    public function run($record, $ajax_handler)
+    {
 
         // Pour récupere les infos du formulaire
         // var_dump($_POST);die;
-        $post_id    = $_POST['queried_id'];
+        // $post_id    = $_POST['queried_id'];
+
+
+        $url = $_POST["referrer"] ?? '';
+
+        if (preg_match('/offre-n-(\d+)/', $url, $matches)) {
+            $post_id = $matches[1];
+        } else {
+            return;
+        }
+
         $categories = get_the_category($post_id);
         foreach ($categories as $category) {
             if ($category->term_id === 12) {
@@ -72,6 +87,7 @@ class FLK_Action_Obtenir_Les_Infos extends \ElementorPro\Modules\Forms\Classes\A
                 $cat = "Vous venez de demander les coordonnées du vigneron ou du propriétaire des vignes"; // c'est une parcelle
             }
         };
+
         $post_email = $_POST["form_fields"]["email"];
         /// Pour recuperer les infos de l'offres
         $data_offre = array();
@@ -84,27 +100,27 @@ class FLK_Action_Obtenir_Les_Infos extends \ElementorPro\Modules\Forms\Classes\A
                 if ($key !== "field_62e10bd7f1f36") { // On ignore la date de naissance
                     if (is_string($type)) {
                         switch ($type) {
-                        case 'radio':
-                            $data_offre[$sub_field_objet["menu_order"]] = array(
-                                "name"  => $field,
-                                "label" => $sub_field_objet["label"],
-                                "value" => $sub_field_objet["choices"][$field],
-                            );
-                            break;
-                        case 'select':
-                            $data_offre[$sub_field_objet["menu_order"]] = array(
-                                "name"  => $field,
-                                "label" => $sub_field_objet["label"],
-                                "value" => $sub_field_objet["choices"][$field],
-                            );
-                            break;
-                        default:
-                            $data_offre[$sub_field_objet["menu_order"]] = array(
-                                "name"  => $field,
-                                "label" => $sub_field_objet["label"],
-                                "value" => $field,
-                            );
-                            break;
+                            case 'radio':
+                                $data_offre[$sub_field_objet["menu_order"]] = array(
+                                    "name"  => $field,
+                                    "label" => $sub_field_objet["label"],
+                                    "value" => $sub_field_objet["choices"][$field],
+                                );
+                                break;
+                            case 'select':
+                                $data_offre[$sub_field_objet["menu_order"]] = array(
+                                    "name"  => $field,
+                                    "label" => $sub_field_objet["label"],
+                                    "value" => $sub_field_objet["choices"][$field],
+                                );
+                                break;
+                            default:
+                                $data_offre[$sub_field_objet["menu_order"]] = array(
+                                    "name"  => $field,
+                                    "label" => $sub_field_objet["label"],
+                                    "value" => $field,
+                                );
+                                break;
                         }
                     }
                 }
@@ -148,10 +164,10 @@ class FLK_Action_Obtenir_Les_Infos extends \ElementorPro\Modules\Forms\Classes\A
         $headers = array('Content-Type: text/html; charset=UTF-8');
         //var_dump(wp_mail($post_email, $subject, $text, $headers));
         wp_mail($post_email, $subject, $text, $headers);
-
     }
 
-    function onMailError($wp_error) {
+    function onMailError($wp_error)
+    {
         var_dump($wp_error);
         // echo "<pre>";
         // print_r($wp_error);
@@ -159,5 +175,4 @@ class FLK_Action_Obtenir_Les_Infos extends \ElementorPro\Modules\Forms\Classes\A
     }
 
     public function on_export($element) {}
-
 }
